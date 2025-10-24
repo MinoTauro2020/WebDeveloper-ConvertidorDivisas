@@ -1,13 +1,16 @@
-# robots.txt para convertidordivisas.com
+# robots.txt para convertidordivisas.es
 User-agent: *
 Allow: /
 Allow: /euro-a-dolar
 Allow: /dolar-a-peso-mexicano
 Allow: /euro-a-peso-argentino
 Allow: /dolar-a-euro
+Allow: /dolar-a-peso-argentino
+Allow: /euro-a-peso-mexicano
+Allow: /libra-a-euro
 Allow: /blog/*
 
-Sitemap: https://convertidordivisas.com/sitemap.xml
+Sitemap: https://convertidordivisas.es/sitemap.xml
 
 # Bloquear recursos innecesarios
 Disallow: /api/
