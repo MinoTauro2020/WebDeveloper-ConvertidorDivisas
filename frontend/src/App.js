@@ -7,10 +7,12 @@ import FAQSection from './components/FAQSection';
 import BlogSection from './components/BlogSection';
 import AdSenseSlot from './components/AdSenseSlot';
 import SEOHead from './components/SEOHead';
-import EuroADolar from './components/LandingPages/EuroADolar';
-import DolarAPesoMexicano from './components/LandingPages/DolarAPesoMexicano';
-import EuroAPesoArgentino from './components/LandingPages/EuroAPesoArgentino';
 import DolarAEuro from './components/LandingPages/DolarAEuro';
+import DolarAPesoArgentino from './components/LandingPages/DolarAPesoArgentino';
+import DolarAPesoMexicano from './components/LandingPages/DolarAPesoMexicano';
+import EuroADolar from './components/LandingPages/EuroADolar';
+import EuroAPesoArgentino from './components/LandingPages/EuroAPesoArgentino';
+import EuroAPesoMexicano from './components/LandingPages/EuroAPesoMexicano';
 import blogPostsData from './data/blogPosts';
 
 function App() {
@@ -24,8 +26,8 @@ function App() {
           <Route path="/dolar-a-peso-mexicano" element={<DolarAPesoMexicano />} />
           <Route path="/euro-a-peso-argentino" element={<EuroAPesoArgentino />} />
           <Route path="/dolar-a-euro" element={<DolarAEuro />} />
-          <Route path="/dolar-a-peso-argentino" element={<ConversionPage from="USD" to="ARS" />} />
-          <Route path="/euro-a-peso-mexicano" element={<ConversionPage from="EUR" to="MXN" />} />
+          <Route path="/dolar-a-peso-argentino" element={<DolarAPesoArgentino />} />
+          <Route path="/euro-a-peso-mexicano" element={<EuroAPesoMexicano />} />
           <Route path="/libra-a-euro" element={<ConversionPage from="GBP" to="EUR" />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
