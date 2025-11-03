@@ -7,11 +7,11 @@ import FAQSection from './components/FAQSection';
 import BlogSection from './components/BlogSection';
 import AdSenseSlot from './components/AdSenseSlot';
 import SEOHead from './components/SEOHead';
-import EuroADolar from './components/LandingPages/EuroADolar';
-import DolarAPesoMexicano from './components/LandingPages/DolarAPesoMexicano';
-import EuroAPesoArgentino from './components/LandingPages/EuroAPesoArgentino';
 import DolarAEuro from './components/LandingPages/DolarAEuro';
 import DolarAPesoArgentino from './components/LandingPages/DolarAPesoArgentino';
+import DolarAPesoMexicano from './components/LandingPages/DolarAPesoMexicano';
+import EuroADolar from './components/LandingPages/EuroADolar';
+import EuroAPesoArgentino from './components/LandingPages/EuroAPesoArgentino';
 import EuroAPesoMexicano from './components/LandingPages/EuroAPesoMexicano';
 import blogPostsData from './data/blogPosts';
 

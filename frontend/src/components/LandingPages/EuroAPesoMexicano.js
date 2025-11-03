@@ -175,7 +175,7 @@ const EuroAPesoMexicano = () => {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Adicionalmente, las <strong>remesas</strong> enviadas por mexicanos en Estados Unidos (más de $60 mil 
-                millones anuales) son una fuente crucial de divisas que apoya al peso. Un flujo constante y creciente 
+                millones USD anuales) son una fuente crucial de divisas que apoya al peso. Un flujo constante y creciente 
                 de remesas ayuda a mantener el peso relativamente estable frente a monedas como el euro.
               </p>
 

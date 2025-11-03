@@ -102,9 +102,10 @@ const DolarAPesoArgentino = () => {
               </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Argentina ha experimentado <strong>inflación de tres dígitos</strong> en los últimos años, con tasas 
-                anuales que superaron el 200% en 2023-2024. En 2025, aunque se espera una moderación gradual, la 
-                inflación proyectada sigue siendo extremadamente alta (120-150% anual). Esta inflación persistente 
-                erosiona el poder adquisitivo del peso argentino y empuja el tipo de cambio al alza constantemente.
+                anuales que superaron el 200% en 2023-2024. Aunque se proyecta una moderación gradual, la inflación 
+                continúa siendo extremadamente alta según análisis económicos (sujeto a cambios según políticas 
+                implementadas). Esta inflación persistente erosiona el poder adquisitivo del peso argentino y empuja 
+                el tipo de cambio al alza constantemente.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 El Banco Central de la República Argentina (BCRA) ha respondido con tasas de interés de referencia 
