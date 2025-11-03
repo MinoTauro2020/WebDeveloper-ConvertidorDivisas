@@ -3,7 +3,7 @@
   <!-- Página principal -->
   <url>
     <loc>https://convertidordivisas.com/</loc>
-    <lastmod>2025-11-03</lastmod>
+    <lastmod>2025-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,9 +75,9 @@
   
   <url>
     <loc>https://convertidordivisas.com/blog/mejores-apps-cambio-moneda</loc>
-    <lastmod>2025-11-03</lastmod>
+    <lastmod>2025-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   
   <url>
