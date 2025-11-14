@@ -13,6 +13,8 @@ import DolarAPesoMexicano from './components/LandingPages/DolarAPesoMexicano';
 import EuroADolar from './components/LandingPages/EuroADolar';
 import EuroAPesoArgentino from './components/LandingPages/EuroAPesoArgentino';
 import EuroAPesoMexicano from './components/LandingPages/EuroAPesoMexicano';
+import AboutPage from './pages/AboutPage';
+import FAQPage from './pages/FAQPage';
 import blogPostsData from './data/blogPosts';
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <SEOHead />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/euro-a-dolar" element={<EuroADolar />} />
           <Route path="/dolar-a-peso-mexicano" element={<DolarAPesoMexicano />} />
           <Route path="/euro-a-peso-argentino" element={<EuroAPesoArgentino />} />
@@ -54,6 +58,8 @@ function HomePage() {
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-white hover:text-yellow-300 transition">Inicio</Link>
             <Link to="/blog" className="text-white hover:text-yellow-300 transition">Blog</Link>
+            <Link to="/faq" className="text-white hover:text-yellow-300 transition">FAQ</Link>
+            <Link to="/about" className="text-white hover:text-yellow-300 transition">Sobre Nosotros</Link>
           </div>
         </nav>
       </header>
@@ -304,7 +310,8 @@ function HomePage() {
               <h4 className="font-bold text-lg mb-4">Recursos</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link to="/blog" className="text-gray-400 hover:text-white">Blog</Link></li>
-                <li><a href="#faq" className="text-gray-400 hover:text-white">Preguntas Frecuentes</a></li>
+                <li><Link to="/faq" className="text-gray-400 hover:text-white">Preguntas Frecuentes</Link></li>
+                <li><Link to="/about" className="text-gray-400 hover:text-white">Sobre Nosotros</Link></li>
               </ul>
             </div>
             <div>
@@ -348,11 +355,17 @@ function ConversionPage({ from, to }) {
   return (
     <div className="min-h-screen">
       <header className="bg-white/10 backdrop-blur-md border-b border-white/20">
-        <nav className="container mx-auto px-4 py-4">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-3xl">💱</span>
             <span className="text-white font-bold text-xl">ConvertidorDivisas.es</span>
           </Link>
+          <div className="hidden md:flex space-x-6">
+            <Link to="/" className="text-white hover:text-yellow-300 transition">Inicio</Link>
+            <Link to="/blog" className="text-white hover:text-yellow-300 transition">Blog</Link>
+            <Link to="/faq" className="text-white hover:text-yellow-300 transition">FAQ</Link>
+            <Link to="/about" className="text-white hover:text-yellow-300 transition">Sobre Nosotros</Link>
+          </div>
         </nav>
       </header>
 
@@ -381,11 +394,17 @@ function BlogPage() {
   return (
     <div className="min-h-screen">
       <header className="bg-white/10 backdrop-blur-md border-b border-white/20">
-        <nav className="container mx-auto px-4 py-4">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-3xl">💱</span>
             <span className="text-white font-bold text-xl">ConvertidorDivisas.es</span>
           </Link>
+          <div className="hidden md:flex space-x-6">
+            <Link to="/" className="text-white hover:text-yellow-300 transition">Inicio</Link>
+            <Link to="/blog" className="text-white hover:text-yellow-300 transition font-semibold">Blog</Link>
+            <Link to="/faq" className="text-white hover:text-yellow-300 transition">FAQ</Link>
+            <Link to="/about" className="text-white hover:text-yellow-300 transition">Sobre Nosotros</Link>
+          </div>
         </nav>
       </header>
 
@@ -408,11 +427,17 @@ function BlogPost() {
     return (
       <div className="min-h-screen">
         <header className="bg-white/10 backdrop-blur-md border-b border-white/20">
-          <nav className="container mx-auto px-4 py-4">
+          <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link to="/" className="flex items-center space-x-2">
               <span className="text-3xl">💱</span>
               <span className="text-white font-bold text-xl">ConvertidorDivisas.es</span>
             </Link>
+            <div className="hidden md:flex space-x-6">
+              <Link to="/" className="text-white hover:text-yellow-300 transition">Inicio</Link>
+              <Link to="/blog" className="text-white hover:text-yellow-300 transition">Blog</Link>
+              <Link to="/faq" className="text-white hover:text-yellow-300 transition">FAQ</Link>
+              <Link to="/about" className="text-white hover:text-yellow-300 transition">Sobre Nosotros</Link>
+            </div>
           </nav>
         </header>
         <section className="container mx-auto px-4 py-12 text-center">
@@ -431,11 +456,17 @@ function BlogPost() {
   return (
     <div className="min-h-screen">
       <header className="bg-white/10 backdrop-blur-md border-b border-white/20">
-        <nav className="container mx-auto px-4 py-4">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-3xl">💱</span>
             <span className="text-white font-bold text-xl">ConvertidorDivisas.es</span>
           </Link>
+          <div className="hidden md:flex space-x-6">
+            <Link to="/" className="text-white hover:text-yellow-300 transition">Inicio</Link>
+            <Link to="/blog" className="text-white hover:text-yellow-300 transition font-semibold">Blog</Link>
+            <Link to="/faq" className="text-white hover:text-yellow-300 transition">FAQ</Link>
+            <Link to="/about" className="text-white hover:text-yellow-300 transition">Sobre Nosotros</Link>
+          </div>
         </nav>
       </header>
 
