@@ -211,9 +211,9 @@ const AboutPage = () => {
             <div>
               <h4 className="font-bold text-lg mb-4">Siguenos</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white text-2xl">📘</a>
-                <a href="#" className="text-gray-400 hover:text-white text-2xl">🐦</a>
-                <a href="#" className="text-gray-400 hover:text-white text-2xl">📷</a>
+                <span className="text-gray-400 text-2xl cursor-pointer" role="img" aria-label="Facebook">📘</span>
+                <span className="text-gray-400 text-2xl cursor-pointer" role="img" aria-label="Twitter">🐦</span>
+                <span className="text-gray-400 text-2xl cursor-pointer" role="img" aria-label="Instagram">📷</span>
               </div>
             </div>
           </div>
