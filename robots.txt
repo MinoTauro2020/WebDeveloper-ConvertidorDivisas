@@ -1,0 +1,34 @@
+# robots.txt para mi-conversor-profesional.com
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /blog
+Allow: /faq
+Allow: /euro-a-dolar
+Allow: /dolar-a-peso-mexicano
+Allow: /euro-a-peso-argentino
+Allow: /dolar-a-euro
+Allow: /dolar-a-peso-argentino
+Allow: /euro-a-peso-mexicano
+Allow: /libra-a-euro
+Allow: /blog/*
+
+Sitemap: https://mi-conversor-profesional.com/sitemap.xml
+
+# Bloquear recursos innecesarios
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /static/
+
+# Crawl-delay
+Crawl-delay: 0
+
+# Reglas específicas para bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Redirección explícita para /blog sin barra final
+    RewriteCond %{REQUEST_URI} ^/blog$
+    RewriteRule ^blog$ /blog/ [R=301,L]
+
+    # Añadir barra final a directorios
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteRule ^(.*)$ $1/ [R=301,L]
+
+    # No redirigir archivos existentes
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirigir todo al index.html (React app)
+    RewriteRule ^.*$ /index.html [L]
+</IfModule>
