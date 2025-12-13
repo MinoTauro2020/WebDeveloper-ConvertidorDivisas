@@ -2,19 +2,30 @@
     RewriteEngine On
     RewriteBase /
 
-    # Redirección explícita para /blog sin barra final
-    RewriteCond %{REQUEST_URI} ^/blog$
-    RewriteRule ^blog$ /blog/ [R=301,L]
+    # Redirección de /blog (sin barra final) a /blog/ - PRIORIDAD MÁXIMA
+    RewriteRule ^blog$ /blog/ [R=301,L,QSA]
 
-    # Añadir barra final a directorios
+    # Redirección de /faq (sin barra final) a /faq/ - PRIORIDAD MÁXIMA
+    RewriteRule ^faq$ /faq/ [R=301,L,QSA]
+
+    # Redirección de /about (sin barra final) a /about/ - PRIORIDAD MÁXIMA
+    RewriteRule ^about$ /about/ [R=301,L,QSA]
+
+    # Redirección de /privacidad (sin barra final) a /privacidad/ - PRIORIDAD MÁXIMA
+    RewriteRule ^privacidad$ /privacidad/ [R=301,L,QSA]
+
+    # Redirección de /terminos (sin barra final) a /terminos/ - PRIORIDAD MÁXIMA
+    RewriteRule ^terminos$ /terminos/ [R=301,L,QSA]
+
+    # Añadir barra final a directorios que existen
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteCond %{REQUEST_URI} !(.*)/$
-    RewriteRule ^(.*)$ $1/ [R=301,L]
+    RewriteRule ^(.*)$ $1/ [R=301,L,QSA]
 
-    # No redirigir archivos existentes
+    # No redirigir archivos existentes ni directorios existentes
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
 
-    # Redirigir todo al index.html (React app)
+    # Redirigir todo lo demás al index.html (para React app SPA)
     RewriteRule ^.*$ /index.html [L]
 </IfModule>
