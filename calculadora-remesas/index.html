@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5914722248817610" crossorigin="anonymous"></script>
+    <title>Calculadora de Remesas 2025 | Compara Costos y Comisiones</title>
+    <meta name="description" content="Calculadora de remesas online gratis. Compara costos, comisiones e impuestos entre Wise, Remitly, Western Union y más. Calcula cuánto recibirá tu beneficiario.">
+    <link rel="canonical" href="https://convertidordivisas.es/calculadora-remesas/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { text-align: center; color: white; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.1rem; opacity: 0.9; }
+        .calculator { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin-bottom: 40px; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: #2d3748; }
+        input, select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; }
+        input:focus, select:focus { outline: none; border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
+        .divider { grid-column: 1 / -1; height: 2px; background: #e2e8f0; }
+        .results { grid-column: 1 / -1; background: #f7fafc; padding: 25px; border-radius: 12px; border-left: 4px solid #667eea; }
+        .result-row { display: flex; justify-content: space-between; margin-bottom: 12px; }
+        .result-label { font-weight: 600; color: #4a5568; }
+        .result-value { font-weight: 700; color: #2d3748; font-size: 1.1rem; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+        .comparison-table th { background: #667eea; color: white; padding: 15px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 15px; border-bottom: 2px solid #e2e8f0; }
+        .comparison-table tr:hover { background: #f7fafc; }
+        .provider-name { font-weight: 600; color: #2d3748; }
+        .commission { color: #ef4444; }
+        .savings { color: #10b981; font-weight: 600; }
+        .best { background: #fef3c7; border-left: 4px solid #f59e0b; }
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+            .calculator { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💰 Calculadora de Remesas</h1>
+        <p class="subtitle">Compara costos y ve cuánto recibe tu beneficiario realmente</p>
+    </header>
+
+    <div class="container">
+        <div class="calculator">
+            <div class="calc-grid">
+                <!-- Origen -->
+                <div>
+                    <h3 style="margin-bottom: 20px; color: #2d3748;">📤 País Origen</h3>
+                    <div class="form-group">
+                        <label>País</label>
+                        <select id="origin-country" onchange="updateCalculation()">
+                            <option value="ES">🇪🇸 España</option>
+                            <option value="MX">🇲🇽 México</option>
+                            <option value="AR">🇦🇷 Argentina</option>
+                            <option value="CO">🇨🇴 Colombia</option>
+                            <option value="US">🇺🇸 Estados Unidos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Moneda</label>
+                        <select id="origin-currency" onchange="updateCalculation()">
+                            <option value="EUR">EUR €</option>
+                            <option value="MXN">MXN $</option>
+                            <option value="ARS">ARS $</option>
+                            <option value="COP">COP $</option>
+                            <option value="USD">USD $</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Cantidad a enviar</label>
+                        <input type="number" id="amount" value="1000" min="1" step="10" onchange="updateCalculation()" oninput="updateCalculation()">
+                    </div>
+                </div>
+
+                <!-- Destino -->
+                <div>
+                    <h3 style="margin-bottom: 20px; color: #2d3748;">📥 País Destino</h3>
+                    <div class="form-group">
+                        <label>País</label>
+                        <select id="dest-country" onchange="updateCalculation()">
+                            <option value="MX">🇲🇽 México</option>
+                            <option value="AR">🇦🇷 Argentina</option>
+                            <option value="CO">🇨🇴 Colombia</option>
+                            <option value="ES">🇪🇸 España</option>
+                            <option value="US">🇺🇸 Estados Unidos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Moneda Destino</label>
+                        <select id="dest-currency" onchange="updateCalculation()">
+                            <option value="MXN">MXN $</option>
+                            <option value="ARS">ARS $</option>
+                            <option value="COP">COP $</option>
+                            <option value="EUR">EUR €</option>
+                            <option value="USD">USD $</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Método de Retiro</label>
+                        <select id="withdrawal-method" onchange="updateCalculation()">
+                            <option value="bank">Cuenta Bancaria</option>
+                            <option value="cash">Efectivo</option>
+                            <option value="wallet">Billetera Digital</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Resultados -->
+                <div class="results">
+                    <div class="result-row">
+                        <span class="result-label">Monto a Enviar</span>
+                        <span class="result-value"><span id="amount-display">1.000</span> <span id="currency-origin">EUR</span></span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Tasa Actual</span>
+                        <span class="result-value" id="exchange-rate">1.10 USD/EUR</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label commission">- Comisión Promedio</span>
+                        <span class="result-value commission" id="commission">-50 EUR (5%)</span>
+                    </div>
+                    <div style="border-top: 2px solid #cbd5e0; padding-top: 12px; margin-top: 12px;">
+                        <div class="result-row">
+                            <span class="result-label">Cantidad Neta</span>
+                            <span class="result-value" id="net-amount">950 EUR</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Recibirá (Aprox.)</span>
+                            <span class="result-value savings" id="receives">1.045 USD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla Comparativa -->
+            <h2 style="margin-top: 40px; margin-bottom: 20px; color: #1a202c;">🏆 Comparativa de Proveedores</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Proveedor</th>
+                        <th>Comisión</th>
+                        <th>Tasa</th>
+                        <th>Tiempo</th>
+                        <th>Recibirá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="best">
+                        <td class="provider-name">💚 Wise</td>
+                        <td class="commission">0.5-1%</td>
+                        <td>Real</td>
+                        <td>1-2 días</td>
+                        <td class="savings">1.049 USD</td>
+                    </tr>
+                    <tr>
+                        <td class="provider-name">📱 Remitly</td>
+                        <td class="commission">1-2%</td>
+                        <td>Buena</td>
+                        <td>1-3 días</td>
+                        <td class="savings">1.035 USD</td>
+                    </tr>
+                    <tr>
+                        <td class="provider-name">🌐 Western Union</td>
+                        <td class="commission">3-8%</td>
+                        <td>Pobre</td>
+                        <td>Minutos</td>
+                        <td class="savings">990 USD</td>
+                    </tr>
+                    <tr>
+                        <td class="provider-name">🏦 Banco</td>
+                        <td class="commission">2-4%</td>
+                        <td>Media</td>
+                        <td>3-5 días</td>
+                        <td class="savings">1.015 USD</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background: #fef3c7; padding: 20px; border-radius: 12px; margin-top: 30px; border-left: 4px solid #f59e0b;">
+                <strong>💡 Consejo:</strong> Con Wise ahorras aproximadamente <strong>60 USD</strong> comparado con Western Union. Para remesas frecuentes, Wise es la mejor opción.
+            </div>
+        </div>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Remesas",
+            "url": "https://convertidordivisas.es/calculadora-remesas/",
+            "applicationCategory": "FinanceApplication"
+        }
+        </script>
+    </div>
+
+    <script>
+        function updateCalculation() {
+            const amount = parseFloat(document.getElementById('amount').value) || 0;
+            const originCurrency = document.getElementById('origin-currency').value;
+
+            document.getElementById('amount-display').textContent = amount.toLocaleString('es-ES');
+            document.getElementById('currency-origin').textContent = originCurrency;
+
+            // Tasas aproximadas (en producción vendrían de API)
+            const rates = {
+                'EUR': 1.10,
+                'MXN': 0.058,
+                'ARS': 0.0105,
+                'COP': 0.00025,
+                'USD': 1
+            };
+
+            const commissionPercent = 1; // 1% promedio
+            const commission = amount * (commissionPercent / 100);
+            const netAmount = amount - commission;
+            const exchangeRate = rates[document.getElementById('dest-currency').value] / rates[originCurrency];
+            const receives = netAmount * exchangeRate;
+
+            document.getElementById('exchange-rate').textContent = exchangeRate.toFixed(2);
+            document.getElementById('commission').textContent = `-${commission.toFixed(0)} ${originCurrency} (${commissionPercent}%)`;
+            document.getElementById('net-amount').textContent = `${netAmount.toFixed(0)} ${originCurrency}`;
+            document.getElementById('receives').textContent = `${receives.toFixed(0)} ${document.getElementById('dest-currency').value}`;
+        }
+
+        // Inicializar
+        updateCalculation();
+    </script>
+</body>
+</html>
