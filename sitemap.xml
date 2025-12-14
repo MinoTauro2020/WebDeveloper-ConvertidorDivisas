@@ -1,97 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Página principal -->
-  <url>
-    <loc>https://mi-conversor-profesional.com/</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- Páginas principales -->
-  <url>
-    <loc>https://mi-conversor-profesional.com/about</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/faq</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Blog -->
-  <url>
-    <loc>https://mi-conversor-profesional.com/blog</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/blog/como-evitar-comisiones-ocultas-2025</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/blog/mejor-momento-cambiar-euros-dolares</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Conversiones principales -->
-  <url>
-    <loc>https://mi-conversor-profesional.com/euro-a-dolar</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/dolar-a-peso-mexicano</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/euro-a-peso-argentino</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/dolar-a-euro</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/dolar-a-peso-argentino</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/euro-a-peso-mexicano</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://mi-conversor-profesional.com/libra-a-euro</loc>
-    <lastmod>2025-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url><loc>https://convertidordivisas.es/</loc><lastmod>2025-12-14</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+    <url><loc>https://convertidordivisas.es/blog/</loc><lastmod>2025-12-14</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+    <url><loc>https://convertidordivisas.es/blog/mejores-casas-cambio-espana-2025/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/blog/como-funciona-tipo-cambio/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/blog/diferencia-forex-casa-cambio/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/blog/guia-enviar-dinero-extranjero/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/blog/mejores-casas-cambio-mexico-2025/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/calculadora-remesas/</loc><lastmod>2025-12-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://convertidordivisas.es/comparador-casas-cambio/</loc><lastmod>2025-12-14</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://convertidordivisas.es/guias/enviar-dinero-mexico-2025/</loc><lastmod>2025-12-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/guias/enviar-dinero-colombia-2025/</loc><lastmod>2025-12-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/guias/enviar-dinero-argentina-2025/</loc><lastmod>2025-12-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://convertidordivisas.es/newsletter/</loc><lastmod>2025-12-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://convertidordivisas.es/recomendaciones-patrocinadas/</loc><lastmod>2025-12-13</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://convertidordivisas.es/contacto/</loc><lastmod>2025-12-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://convertidordivisas.es/privacidad/</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://convertidordivisas.es/terminos/</loc><lastmod>2025-12-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

@@ -1,34 +1,13 @@
-# robots.txt para mi-conversor-profesional.com
 User-agent: *
 Allow: /
-Allow: /about
-Allow: /blog
-Allow: /faq
-Allow: /euro-a-dolar
-Allow: /dolar-a-peso-mexicano
-Allow: /euro-a-peso-argentino
-Allow: /dolar-a-euro
-Allow: /dolar-a-peso-argentino
-Allow: /euro-a-peso-mexicano
-Allow: /libra-a-euro
-Allow: /blog/*
+Allow: /calculadora-remesas/
+Allow: /comparador-casas-cambio/
+Allow: /guias/
+Allow: /newsletter/
+Allow: /blog/
+Allow: /recomendaciones-patrocinadas/
 
-Sitemap: https://mi-conversor-profesional.com/sitemap.xml
+Disallow: /admin/
+Disallow: /private/
 
-# Bloquear recursos innecesarios
-Disallow: /api/
-Disallow: /*.json$
-Disallow: /static/
-
-# Crawl-delay
-Crawl-delay: 0
-
-# Reglas específicas para bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
+Sitemap: https://convertidordivisas.es/sitemap.xml
