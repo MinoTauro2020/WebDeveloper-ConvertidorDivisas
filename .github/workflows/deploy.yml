@@ -1,0 +1,47 @@
+name: Auto Deploy to CyberPanel
+
+on:
+  push:
+    branches:
+      - main
+      - claude/add-exchange-articles-01XfhSYjkhgW7rB6YMMGHkxm
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Deploy to CyberPanel Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CYBERPANEL_HOST }}
+          username: ${{ secrets.CYBERPANEL_USER }}
+          key: ${{ secrets.CYBERPANEL_SSH_KEY }}
+          port: ${{ secrets.CYBERPANEL_PORT }}
+          script: |
+            cd ${{ secrets.PROJECT_PATH }}
+            git fetch origin
+            git checkout main 2>/dev/null || git checkout master
+            git pull origin main 2>/dev/null || git pull origin master
+            git merge claude/add-exchange-articles-01XfhSYjkhgW7rB6YMMGHkxm || true
+
+            # Verificar cambios
+            echo "✅ Cambios sincronizados"
+            git log --oneline -5
+
+            # Recargar servicios web
+            sudo systemctl reload apache2 2>/dev/null || sudo systemctl reload nginx || true
+            echo "✅ Servidor recargado"
+
+      - name: Notification
+        if: always()
+        run: |
+          echo "Deploy completado"
+          echo "Rama: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Timestamp: $(date)"
