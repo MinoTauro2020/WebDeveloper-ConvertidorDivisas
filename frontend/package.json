@@ -38,12 +38,21 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
-    "react-snap": "^1.1.1",
+    "react-snap": "^1.23.0",
     "tailwindcss": "^3.3.5"
   },
-  "snapshots": {
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
     "include": [
       "/",
+      "/about",
+      "/blog",
+      "/faq",
+      "/blog/como-evitar-comisiones-ocultas-2025",
+      "/blog/mejor-momento-cambiar-euros-dolares",
       "/dolar-a-peso-argentino",
       "/blog/mejores-apps-cambio-moneda"
     ],
@@ -57,4 +66,4 @@
       ]
     ]
   }
-}
+ }
