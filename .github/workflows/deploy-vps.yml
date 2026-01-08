@@ -1,0 +1,78 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build and Deploy to VPS
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+      
+      - name: 🔐 Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p ${{ secrets.VPS_PORT }} -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+      
+      - name: 📋 Copy deploy script to VPS
+        run: |
+          scp -P ${{ secrets.VPS_PORT }} -o StrictHostKeyChecking=no \
+            .github/scripts/deploy.sh \
+            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/tmp/deploy.sh
+      
+      - name: 🚀 Execute deployment
+        id: deploy
+        run: |
+          ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'ENDSSH'
+            set -e
+            export VPS_APP_PATH="${{ secrets.VPS_APP_PATH }}"
+            export VPS_DEPLOY_PATH="${{ secrets.VPS_DEPLOY_PATH }}"
+            export VPS_FILE_OWNER="${{ secrets.VPS_FILE_OWNER }}"
+            
+            chmod +x /tmp/deploy.sh
+            /tmp/deploy.sh
+          ENDSSH
+      
+      - name: 🏥 Health check
+        run: |
+          sleep 5
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://convertidordivisas.com/ || echo "000")
+          if [ "$response" = "200" ] || [ "$response" = "301" ] || [ "$response" = "302" ]; then
+            echo "✅ Health check passed (HTTP $response)"
+          else
+            echo "❌ Health check failed (HTTP $response)"
+            exit 1
+          fi
+      
+      - name: 🔄 Rollback on failure
+        if: failure() && steps.deploy.outcome == 'failure'
+        run: |
+          ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'ENDSSH'
+            BACKUP_DIR="/home/backup-deploys"
+            LATEST_BACKUP=$(ls -t $BACKUP_DIR | head -1)
+            
+            if [ -n "$LATEST_BACKUP" ]; then
+              echo "🔄 Rolling back to: $LATEST_BACKUP"
+              cp -a $BACKUP_DIR/$LATEST_BACKUP/* ${{ secrets.VPS_DEPLOY_PATH }}/
+              chown -R ${{ secrets.VPS_FILE_OWNER }} ${{ secrets.VPS_DEPLOY_PATH }}/
+              systemctl restart lsws
+              echo "✅ Rollback completed"
+            else
+              echo "⚠️  No backup found for rollback"
+            fi
+          ENDSSH
+      
+      - name: 🧹 Cleanup
+        if: always()
+        run: |
+          ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} \
+            "rm -f /tmp/deploy.sh" || true
+          rm -f ~/.ssh/id_ed25519
