@@ -53,7 +53,7 @@ jobs:
           fi
       
       - name: 🔄 Rollback on failure
-        if: failure() && steps.deploy.conclusion == 'failure'
+        if: failure()
         run: |
           ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'ENDSSH'
             BACKUP_DIR="/home/backup-deploys"

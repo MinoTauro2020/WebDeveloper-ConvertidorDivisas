@@ -87,8 +87,13 @@ fi
 
 # Mantener solo los últimos 5 backups
 echo "🧹 Limpiando backups antiguos..."
-cd "$BACKUP_DIR"
-ls -t | tail -n +6 | xargs -r rm -rf
+if [ -d "$BACKUP_DIR" ] && [ "$(ls -A $BACKUP_DIR 2>/dev/null)" ]; then
+  cd "$BACKUP_DIR"
+  # Solo eliminar directorios que coincidan con el patrón backup_*
+  ls -t | grep "^backup_" | tail -n +6 | xargs -r rm -rf
+else
+  echo "   No hay backups antiguos para limpiar"
+fi
 
 echo "✅ Deploy completado exitosamente!"
 echo "📊 Información del deploy:"
