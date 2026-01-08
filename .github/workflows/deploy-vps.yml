@@ -24,7 +24,7 @@ jobs:
       
       - name: 📋 Copy deploy script to VPS
         run: |
-          scp -P ${{ secrets.VPS_PORT }} -o StrictHostKeyChecking=no \
+          scp -P ${{ secrets.VPS_PORT }} \
             .github/scripts/deploy.sh \
             ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/tmp/deploy.sh
       
@@ -53,7 +53,7 @@ jobs:
           fi
       
       - name: 🔄 Rollback on failure
-        if: failure() && steps.deploy.outcome == 'failure'
+        if: failure() && steps.deploy.conclusion == 'failure'
         run: |
           ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'ENDSSH'
             BACKUP_DIR="/home/backup-deploys"
